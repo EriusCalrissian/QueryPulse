@@ -1,0 +1,66 @@
+# JOINDNS4.EU
+86.54.11.100
+2a13:1001::86:54:11:100
+https://unfiltered.joindns4.eu/dns-query
+tls://unfiltered.joindns4.eu
+
+# LibreDNS
+https://doh.libredns.gr/dns-query
+tls://dot.libredns.gr
+
+# ffmuc
+5.1.66.255
+185.150.99.255
+2001:678:e68:f000::
+2001:678:ed0:f000::
+https://doh.ffmuc.net/dns-query
+tls://dot.ffmuc.net
+quic://doq.ffmuc.net
+h3://doh.ffmuc.net/dns-query
+
+# ControlD
+76.76.2.0
+76.76.10.0
+2606:1a40::
+2606:1a40:1::
+https://freedns.controld.com/p0
+tls://p0.freedns.controld.com
+quic://p0.freedns.controld.com
+h3://freedns.controld.com/p0
+
+# DNSForge
+138.199.149.249
+78.47.71.194
+2a01:4f8:c17:7aa5::249
+2a01:4f8:c013:aae9::194
+https://blank.dnsforge.de/dns-query
+tls://blank.dnsforge.de
+quic://blank.dnsforge.de
+
+# Artikel 10
+https://dns.artikel10.org/dns-query
+tls://dns.artikel10.org
+
+# Foundation for Applied Privacy
+https://doh.applied-privacy.net/query
+tls://dot1.applied-privacy.net
+
+# Digitale Gesellschaft
+https://dns.digitale-gesellschaft.ch/dns-query
+tls://dns.digitale-gesellschaft.ch
+
+# Mullvad
+https://dns.mullvad.net/dns-query
+tls://dns.mullvad.net
+
+# UncensoredDNS
+https://anycast.uncensoreddns.org/dns-query
+tls://anycast.uncensoreddns.org
+
+# DNS.SB
+185.222.222.222
+45.11.45.11
+2a09::
+2a11::
+https://doh.sb/dns-query
+tls://dot.sb

@@ -1,0 +1,29 @@
+# Benchmark outputs
+results/
+results.csv
+adguardhome-dns.yaml
+run_*.json
+*.tmp
+
+# Local backups / scratch
+*.bak
+*.bak-*
+_scratch*
+
+# Legacy single-file results
+results.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.Python
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
