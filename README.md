@@ -9,8 +9,6 @@ It works as a plain benchmark. Exporting the fastest servers to AdGuard Home is 
 Python 3.10+, one script, three packages (`dnspython`, `httpx2`, `aioquic`). Prefer [uv](https://docs.astral.sh/uv/):
 
 ```bash
-# DietPi: dietpi-software install 217
-# elsewhere: curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 uv pip install -r requirements.txt
 uv run python querypulse.py
