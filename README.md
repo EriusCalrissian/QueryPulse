@@ -6,22 +6,25 @@ It works as a plain benchmark. Exporting the fastest servers to AdGuard Home is 
 
 ## Quick start
 
-Python 3.10+, one script, three packages:
+Python 3.10+, one script, three packages (`dnspython`, `httpx2`, `aioquic`). Prefer [uv](https://docs.astral.sh/uv/):
 
 ```bash
-pip install -r requirements.txt   # dnspython, httpx2 (DoH), aioquic (DoQ/DoH3)
-python querypulse.py              # interactive menu
+# DietPi: dietpi-software install 217
+# elsewhere: curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv
+uv pip install -r requirements.txt
+uv run python querypulse.py
 ```
 
-On DietPi / Debian, where system `pip` is blocked:
+Without `httpx2` or `aioquic`, the matching protocols are skipped with a warning.
+
+Fallback without uv (e.g. system `pip` blocked on Debian):
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python querypulse.py
 ```
-
-Without `httpx2` or `aioquic`, the matching protocols are skipped with a warning.
 
 ## Why
 
@@ -155,7 +158,7 @@ The snippet is always written to `adguardhome-dns.yaml`. If you give a config pa
 Use `--no-restart` if you manage the service yourself. `--proto` narrows upstream/fallback only; bootstrap always uses plain DNS.
 
 ```bash
-sudo .venv/bin/python querypulse.py --export-adguard --privacy no-logging \
+sudo uv run python querypulse.py --export-adguard --privacy no-logging \
   --providers 2 --per-provider 1 \
   --adguard-config /mnt/dietpi_userdata/adguardhome/AdGuardHome.yaml
 ```

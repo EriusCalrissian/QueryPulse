@@ -567,9 +567,9 @@ def run_benchmark(endpoints: list[Endpoint], domains: list[str], timeout_ms: int
 def run_once(args: argparse.Namespace) -> dict[str, Any]:
     """Benchmark all endpoints once and save the run to the results folder."""
     if not HAVE_DOH:
-        print("warn: httpx2 missing — DoH probes skipped (pip install httpx2)", file=sys.stderr)
+        print("warn: httpx2 missing — DoH probes skipped (uv pip install httpx2)", file=sys.stderr)
     if not HAVE_QUIC:
-        print("warn: aioquic missing — DoQ/DoH3 probes skipped (pip install aioquic)", file=sys.stderr)
+        print("warn: aioquic missing — DoQ/DoH3 probes skipped (uv pip install aioquic)", file=sys.stderr)
 
     domains = load_domains(args.domains)
     endpoints = load_servers(args.servers_dir)
