@@ -1,3 +1,2 @@
-dnspython>=2.6
-aioquic>=1.0.0
-httpx2>=2.0.0
+dnspython[doh,doq]>=2.9.2
+httpx2>=2.13
