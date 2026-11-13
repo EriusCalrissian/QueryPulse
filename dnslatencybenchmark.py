@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""QueryPulse — DNS resolver latency benchmark with connection reuse.
+"""DNSLatencyBenchmark — DNS resolver latency benchmark with connection reuse.
 
 Every endpoint gets one long-lived session (UDP socket, TLS stream, HTTP/2
 client, QUIC connection). Untimed setup queries open it, then each scored
@@ -661,9 +661,9 @@ def adguard_selection(
 
 def adguard_yaml(sections: dict[str, list[dict[str, Any]]], source: str) -> str:
     lines = [
-        f"# QueryPulse export — {source}",
+        f"# DNSLatencyBenchmark export — {source}",
         "# Replace these keys in the dns: section of AdGuardHome.yaml",
-        "# (or let QueryPulse do it: --adguard-config PATH).",
+        "# (or let DNSLatencyBenchmark do it: --adguard-config PATH).",
         "dns:",
     ]
     for key, rows in sections.items():
@@ -897,7 +897,7 @@ MENU = {
 
 
 def interactive_menu(args: argparse.Namespace) -> int:
-    print("QueryPulse\n----------")
+    print("DNSLatencyBenchmark\n-------------------")
     for key, (label, _) in MENU.items():
         print(f"{key}) {label}")
     print()

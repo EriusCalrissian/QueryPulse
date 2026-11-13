@@ -1,4 +1,4 @@
-# QueryPulse
+# DNSLatencyBenchmark
 
 DNS resolver latency benchmark for **UDP**, **DoT**, **DoH**, **DoQ**, and **DoH3**, measured from your own network.
 
@@ -11,7 +11,7 @@ Python 3.10+, one script, three packages (`dnspython`, `httpx2`, `aioquic`). Pre
 ```bash
 uv venv
 uv pip install -r requirements.txt
-uv run python querypulse.py
+uv run python dnslatencybenchmark.py
 ```
 
 Without `httpx2` or `aioquic`, the matching protocols are skipped with a warning.
@@ -21,12 +21,12 @@ Fallback without uv (e.g. system `pip` blocked on Debian):
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python querypulse.py
+.venv/bin/python dnslatencybenchmark.py
 ```
 
 ## Why
 
-I wanted a multi-protocol DNS benchmark from *my* network, not brochure numbers. Resolvers differ a lot by protocol and location, and testing them by hand in AdGuard Home is slow. QueryPulse measures them and can optionally write the winners into `AdGuardHome.yaml`.
+I wanted a multi-protocol DNS benchmark from *my* network, not brochure numbers. Resolvers differ a lot by protocol and location, and testing them by hand in AdGuard Home is slow. DNSLatencyBenchmark measures them and can optionally write the winners into `AdGuardHome.yaml`.
 
 ## Usage
 
@@ -42,11 +42,11 @@ Menu:
 Same without the menu:
 
 ```bash
-python querypulse.py --run                # run once, show results
-python querypulse.py --show-only          # show stored results
-python querypulse.py --show-only --top 15 --proto dot doq
-python querypulse.py --export-csv
-python querypulse.py --export-adguard
+python dnslatencybenchmark.py --run                # run once, show results
+python dnslatencybenchmark.py --show-only          # show stored results
+python dnslatencybenchmark.py --show-only --top 15 --proto dot doq
+python dnslatencybenchmark.py --export-csv
+python dnslatencybenchmark.py --export-adguard
 ```
 
 | Flag | Meaning |
@@ -156,7 +156,7 @@ The snippet is always written to `adguardhome-dns.yaml`. If you give a config pa
 Use `--no-restart` if you manage the service yourself. `--proto` narrows upstream/fallback only; bootstrap always uses plain DNS.
 
 ```bash
-sudo uv run python querypulse.py --export-adguard --privacy no-logging \
+sudo uv run python dnslatencybenchmark.py --export-adguard --privacy no-logging \
   --providers 2 --per-provider 1 \
   --adguard-config /mnt/dietpi_userdata/adguardhome/AdGuardHome.yaml
 ```
